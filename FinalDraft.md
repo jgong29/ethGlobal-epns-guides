@@ -1,6 +1,6 @@
 # Submission
 
-## What is EPNS
+# What is EPNS
 
 Ethereum Push Notification Service (EPNS) is the world’s first decentralized communication & notification protocol for Web3.
 
@@ -26,6 +26,7 @@ Being an open communication middleware, notifications can be integrated and show
     * Help PUSH token-holders to vote in EPNS governance proposals
     * All of the above [✅]
 
+---
 
 # What are Channels?
 Any user who activates themselves as a service on the protocol to send notifications for its users can be considered a Channel.
@@ -74,7 +75,9 @@ In order to set-up channel alias address for any preferred chain, one has to go 
     *  The User will receive the notification in the main inbox.
     *  The Notification will go to the Spam Box.
 
-## Notifications
+---
+
+# Notifications
 
 Any successfully created channel, in its active state,  can send notifications to its subscribers about a wide range of things related to defi, governance proposals, web3 news, or any other crucial updates about their protocol/services.
 
@@ -101,8 +104,9 @@ This mechanism of sending delegated notifications is quite effective in providin
     * They come with a clickable Call-to-Action link
     * They take almost no time to trigger
 
+---
 
-## Push Nodes
+# Push Nodes
 
 Push Nodes are the central piece of the network that enables the blockchain of Web3 notifications to work. In essence, they are validators that can be run by anyone in the future with staking and slashing
 
@@ -130,6 +134,8 @@ Push Nodes are the central piece of the network that enables the blockchain of W
     * Enhances speed of notification delivery
     * All of the above.
 
+---
+
 ## Showrunners
 
 The showrunners framework is a scaffold that developers can use to build out notifications for their use cases.
@@ -137,3 +143,93 @@ The showrunners framework is a scaffold that developers can use to build out not
 Showrunners framework provides the tools and helpers required for constructing the payload and sending the notification using the EPNS infrastructure.
 
 Out-of-the-box showrunners provide the developer with a scheduling engine and libraries and helpers for easy access to blockchain data as well as web2 data sources.
+
+---
+
+# Creating a Channel
+
+Creating a channel is the very first step for sending notifications via EPNS.
+
+Any wallet which activates itself on the EPNS Protocol to send a notification is called a Channel.
+
+Using the EPNS dApp or our smart contracts, anyone with a wallet address on the Ethereum network can create their own channel. It can be deployed on;
+* The Ethereum Mainnet (via[ Prod dApp](https://app.epns.io/)), or
+* Kovan Test Network (via [Staging dApp](https://staging-app.epns.io/))
+
+## Requirements for Setting Up a Channel
+Ideally, there are 6 crucial requirements for creating a Channel.
+
+1. A Channel Name
+2. Channel Logo (an image of size 128px * 128px)
+3. Alias Network (required for multi-chain, for example, if on Polygon, provide Polygon address of your contract, else can be left blank, currently supports only Polygon).
+
+> *Important: This field needs to be provided at the very start in case you want to enable your channel on other blockchain networks, see  for guides and to understand the process.*
+
+4. A brief Channel Description (250 Characters)
+5. Channel CTA (Call To Action link)
+6. An amount of 50 DAI in your Wallet (and some ETH )
+
+> *If you are setting up a Channel on Staging dApp, you can get Free DAI and Kovan ETH from the dApp & online faucets. No need for real DAI/ETH on the Staging app 😁*
+
+## Enabling Channel on Other Chain
+As previously mentioned, although channel creation happens on Ethereum itself, the protocol is designed to enable the channel to send notification on any chain.
+
+This is exactly where Channel Alias set-up plays a major role.
+
+### How to set up Channel Alias?
+In order to set-up channel alias address for any preferred chain, one has to go through 2 simple steps:
+
+* Selecting the chain and providing the right alias address for the channel during channel creation itself.
+* Verification of the alias Address on the selected chain.
+
+---
+# Sending Notifications
+
+Who can Send Notifications?
+As per the current design of the protocol, there can be 3 main actors who can send notifications:
+1. **Channel Owners**: The owners of a particular channel can send notifications to their subscribers.
+
+3. **Delegate Notification Senders**: Channel owners can allow any particular wallet address to send notifications on behalf of his/her channel. This feature is called delegated notifications and you can read more about it in this section 👉
+4. **Notifications To Yourself**: The EPNS Communicator allows any address to send notifications to themselves 😃 It’s important to note, however, that the address sends the notification to themselves only.
+
+> **Note:**
+> *Sending notifications is a **gasless** transaction and therefore notification senders need not pay any gas fee while sending notifications via the Dapp.*
+>
+> *Gas Fees are only applicable when on-chain notifications are triggered directly from smart contracts.*
+
+
+## How to trigger and send notifications
+
+EPNS protocol provides many ways to trigger a notification. For instance, a channel owner or delegate can trigger notifications using:
+
+* EPNS Dapp
+* Using EPNS SDK
+* Using Subgraph
+* Using Showrunners
+
+---
+# Receiving Notifications
+
+Receiving notifications is a farily simple process and can be done very easily.
+
+As of now, EPNS allows you to receive notifications directly to your wallet addresses through the crypto front-ends, in the form of SNS Notifications etc.
+
+## Receiving notifications via SNS
+
+### What are SNS Notifications
+SNS module for Push Delivery Nodes allows any developer to receive notifications, chats, or any other form of web3 communication directly to the platform they are building with the help of webhooks.
+
+Hosted SNS Module is a mid-level solution that eliminates all the heavy load of running a node or syncing information and gives you webhooks that you implement to start receiving notifications, chats, or any other web3 communication in your software.
+
+### How to get started with hosted SNS module?
+
+Integrating the SNS module into your code takes less than 10 mins and contains just 3 steps:
+
+1. **Step 1**: Implement a webhook to listen to AWS SNS. Here’s a boilerplate along with specs to get you npm installed and running: https://github.com/ethereum-push-notification-service/epns-sns-boilerplate
+2. **Step 2**: You will need to open an endpoint either at a dedicated IP that listens to SNS or, if you are testing locally, have to expose the public endpoint for which tons of software is available.
+
+> *Hint: For testing locally, You can also use ngrok to expose the public endpoint. If you use this with the boilerplate, the port needs to be 6000. The ngrok URL is now the SNS endpoint required in step 3*.
+
+ **Step 3**: Once you set up this, you need to contact us by either shouting / tagging us on Discord or reaching out via the contact form. We need this as the SNS module requires whitelisting of your webhook endpoint.
+
+> [EPNS Boiler Plate](https://github.com/ethereum-push-notification-service/epns-sns-boilerplate) can also be used as a starting point to consume the feeds from the EPNS SNS Topic.
