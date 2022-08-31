@@ -27,7 +27,7 @@ Being an open communication middleware, notifications can be integrated and show
     * All of the above [✅]
 
 
-## What are Channels?
+# What are Channels?
 Any user who activates themselves as a service on the protocol to send notifications for its users can be considered a Channel.
 
 In other words, any service, i.e., a dapp, protocol, or even a web2 service, that wants to send notifications out to its web3 users can choose to become a channel and establish an adequate communication bridge with its users.
@@ -43,20 +43,36 @@ Users who are not a subscriber of a particular channel, receive notifications fr
 
 > ***Opting In or Opting out of a Channel is a completely gasless transaction and requires no fees.***
 
+## What is Channel Alias?
+In order to enable your channel to be blockchain-agnostic and allow multi-chain communication, we have introduced a new term called Channel Alias. This property is what enables your channel to send notifications on any other blockchain.
+
+In simpler terms, a channel alias address is a native representation of your Ethereum channel on any other EVM or Non-EVM chain through which you wish to communicate with your subscribers.
+
+This means that although channel creation must happen on the Ethereum blockchain itself, notifications or communications can be carried out on any other chain through the same channel if the channel has its alias address adequately configured for that particular chain.
+
+You can communicate with your subscribers on Polygon, BSC, Solana, etc. using an Alias address that is compatible with that respective blockchain.
+
+## How to set up Channel Alias?
+Now that we understand channel alias, it's time to understand how one set up their channel alias address for any other chain.
+
+In order to set-up channel alias address for any preferred chain, one has to go through 2 simple steps:
+* Selecting the chain and providing the right alias address for the channel during channel creation itself.
+* Verification of the alias Address on the selected chain.
+
 ## Questions
 1. On which chain, does the channel creation happen?
     * Polygon
-    * Ethereum [✅]
+    * Ethereum
     * None of the above.
 
 2. Can you send notifications only on Ethereum blockchain?
     * Yes, it’s restricted to the Ethereum blockchain only.
-    * No, EPNS notifications are chain-agnostic and not tied only to Ethereum. [✅]
+    * No, EPNS notifications are chain-agnostic and not tied only to Ethereum.
 
 2. What happens if the user receives notifications from an unsubscribed channel?
     *  The User will not get that Notification.
     *  The User will receive the notification in the main inbox.
-    *  The Notification will go to the Spam Box.[✅]
+    *  The Notification will go to the Spam Box.
 
 ## Notifications
 
