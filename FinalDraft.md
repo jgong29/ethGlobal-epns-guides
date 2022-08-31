@@ -165,7 +165,36 @@ The EPNS Communicator protocol is comparatively quite simple. The communicator p
     * None of the above.
 
 ---
+# EPNS SDK
 
+EPNS SDK is a growing Monorepo of packages that provide solutions for a wide range of development tasks one might come across while building on top of EPNS protocol.
+
+It is a Javascript-based group of packages that helps developers to:
+* Send notifications
+* Subscribe (opt in) / Unsubscribe (opt out)
+* Build EPNS features into their dApps
+* Enable Access to Push Nodes APIs
+* Render Default Notifications UI, etc
+
+
+It is written in Typescript and supports React, React Native, Plain JS, and Node JS-based platforms. (We are adding support for more!).
+It is also built on top of standard Web3 packages like *ethers, @web3-react*
+
+## EPNS SDK Features
+
+The SDK provides us with the following imperative features:
+* Sending Notifications
+* Opt-in to a Channel
+* Opt-out from a channel
+* Fetching notifications for a given user address
+* Fetching Spam notifications for a given user address
+* Fetching User subscriptions
+* Fetching Channel Details
+* Search for any particular channel
+* Notification Components and view
+* Embedded Notifications
+
+---
 ## Showrunners
 
 The showrunners framework is a scaffold that developers can use to build out notifications for their use cases.
@@ -232,10 +261,10 @@ As per the current design of the protocol, there can be 3 main actors who can se
 
 EPNS protocol provides many ways to trigger a notification. For instance, a channel owner or delegate can trigger notifications using:
 
-* EPNS Dapp
+* [EPNS Dapp](https://docs.epns.io/developers/developer-zone/sending-notifications/dapp-serverless-workflow)
 * Using EPNS SDK
-* Using Subgraph
-* Using Showrunners
+* [Using Subgraph](https://docs.epns.io/developers/developer-zone/sending-notifications/using-subgraph)
+* [Using Showrunners](https://docs.epns.io/developers/developer-zone/sending-notifications/using-showrunners-scaffold-gasless)
 
 ---
 # Receiving Notifications
@@ -263,3 +292,60 @@ Integrating the SNS module into your code takes less than 10 mins and contains j
  **Step 3**: Once you set up this, you need to contact us by either shouting / tagging us on Discord or reaching out via the contact form. We need this as the SNS module requires whitelisting of your webhook endpoint.
 
 > [EPNS Boiler Plate](https://github.com/ethereum-push-notification-service/epns-sns-boilerplate) can also be used as a starting point to consume the feeds from the EPNS SNS Topic.
+
+**Watch this quick video guide to ensure the right set-up**
+
+[**SNS for Push Delivery Node**](https://www.youtube.com/watch?v=VocGkaL0eEA)
+
+---
+# EPNS Starter Kit
+
+The SDK starter-kit is meant to showcase developers on how to use the EPNS SDK packages -
+
+* [@epnsproject/sdk-restapi](https://www.npmjs.com/package/@epnsproject/sdk-restapi) Provides access to EPNS backend APIs.
+
+* [@epnsproject/sdk-uiweb](https://www.npmjs.com/package/@epnsproject/sdk-uiweb) Provides React based components to show Notifications, Spam, SubscribedModal etc for dApps.
+
+* [@epnsproject/sdk-uiembed](https://www.npmjs.com/package/@epnsproject/sdk-uiembed) Provides vanilla JS sidebar notifications for any dApp.
+
+> CRA-Typescript
+This particular kit is built out using CRA, Typescript. The SDK packages should also work out for React using plain JS.
+
+## How to get started with the SDK Starter Kit?
+
+```
+git clone https://github.com/ethereum-push-notification-service/epns-sdk-starter-kit.git
+
+cd epns-sdk-starter-kit
+
+yarn install
+yarn start
+```
+
+### Dependencies
+
+If you are trying to build out a separate dapp following this starter-kit example, some of the following dependencies might be required for the SDK and any dApp to work.
+
+1. @epnsproject/sdk-uiweb has a peerDependency on styled-components
+
+    `yarn add styled-components`
+
+2. Since its a dApp, the following are the web3 dependencies that you can install for wallet connection
+ ` yarn add ethers`
+
+3. The next package might only be needed if you are using web3-react. *You are free to use any other React based web3 solution.*
+
+`yarn add @web3-react/core @web3-react/injected-connector`
+
+> **Note:** *No need to install these if you are using the starter-kit itself since we have already installed these for you so that you can focus on how to use the EPNS-SDK packages*
+
+## Quick Walkthrough of the App
+The App has the following features-
+The App has following features-
+
+| Page    | Features    | SDK package used |
+|----------|---------|---------|
+| Notifications    | notifications, <br/>spams, <br/>subscribed modal  |  @epnsproject/sdk-uiweb, <br/>@epnsproject/sdk-restapi    |
+| Channels     | get channel details for a specific channel, <br/>search for channel(s), <br/>get channel subscribers, <br/>is the logged-in user subscribed to the channel, <br/>opt in a channel, <br/>opt out a channel  | @epnsproject/sdk-restapi      |
+| Payloads     | send notification for different use cases  | @epnsproject/sdk-restapi      |
+| Embed | sidebar notifications for the logged in user if subscribed on EPNS  |   @epnsproject/sdk-uiembed    |
