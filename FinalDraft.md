@@ -539,7 +539,7 @@ This file is based on [AWS-SNS](https://aws.amazon.com/sns/?whats-new-cards.sort
 # Congratulations, You are a ROCKSTAR
 
 
-## EPNS Developer Resources 
+## EPNS Developer Resources
 
 1. [**Developer Documentations**](https://docs.epns.io/developers/)
 2. [**EPNS Github**](https://github.com/ethereum-push-notification-service)  
@@ -550,4 +550,4 @@ This file is based on [AWS-SNS](https://aws.amazon.com/sns/?whats-new-cards.sort
 
 ---
 1. Explore the [EPNS dapp ](https://app.epns.io/)
-2. Connect with us on [Discord](https://discord.com/invite/YVPB99F9W5)
+2. Connect with us on [Discord](https://discord.gg/epns)
