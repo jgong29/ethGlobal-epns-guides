@@ -536,3 +536,18 @@ This file is based on [AWS-SNS](https://aws.amazon.com/sns/?whats-new-cards.sort
     * channelKeys.json
     * None
 ---
+# Congratulations, You are a ROCKSTAR
+
+
+## EPNS Developer Resources 
+
+1. [**Developer Documentations**](https://docs.epns.io/developers/)
+2. [**EPNS Github**](https://github.com/ethereum-push-notification-service)  
+3. **EPNS SDK Packages:**
+* [@epnsproject/sdk-restapi](https://www.npmjs.com/package/@epnsproject/sdk-restapi) Provides access to EPNS backend APIs.
+* [@epnsproject/sdk-uiweb](https://www.npmjs.com/package/@epnsproject/sdk-uiweb) Provides React based components to show Notifications, Spam, SubscribedModal etc for dApps.
+* [@epnsproject/sdk-uiembed](https://www.npmjs.com/package/@epnsproject/sdk-uiembed) Provides vanilla JS sidebar notifications for any dApp.
+
+---
+1. Explore the [EPNS dapp ](https://app.epns.io/)
+2. Connect with us on [Discord](https://discord.com/invite/YVPB99F9W5)
